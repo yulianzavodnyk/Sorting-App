@@ -46,7 +46,7 @@ void Window::GenerateArrayButton_clicked() {
         int* arr = initialize_random_array(array_size, a.toInt(), b.toInt());
 
         QStringList inputList;
-        for(int i = 0; i < array_size; i++)
+        for (int i = 0; i < array_size; i++)
             inputList.append(QString::number(arr[i]));
 
         ui->InputArray->setText(inputList.join(", "));
@@ -60,31 +60,21 @@ bool Window::validate_generate_input(QString& InputSize, QString& InputFirstNum,
     int a = InputFirstNum.toInt(&first_num_is_int);
     int b = InputSecondNum.toInt(&second_num_is_int);
 
-    if(InputSize.isEmpty()) {
+    if (InputSize.isEmpty())
         ui->SortedArray->setText("Generation Error: To generate array to must input size.");
-        return false;
-    }
-    else if (!size_is_int || size < 1 || size > 100000) {
+    else if (!size_is_int || size < 1 || size > 100000)
         ui->SortedArray->setText("Generation Error: Size must be valid integer from 1 to 100000.");
-        return false;
-    }
-    else if(InputFirstNum == "" || InputSecondNum == "") {
+    else if (InputFirstNum == "" || InputSecondNum == "")
         ui->SortedArray->setText("Generation Error: To generate array you must input both min and max numbers.");
-        return false;
-    }
-    else if (!first_num_is_int || !second_num_is_int) {
-        ui->SortedArray->setText("Generation Error: Min and max numbers must be valid.");
-        return false;
-    }
-    else if (a < -1000000 || a > 1000000 || b < -1000000 || b > 1000000) {
-        ui->SortedArray->setText("Generation Error: Min and max numbers allows to be only integers from -1000000 to 1000000.");
-        return false;
-    }
-    else if (a > b) {
+    else if (!first_num_is_int || !second_num_is_int)
+        ui->SortedArray->setText("Generation Error: Min and max numbers must be valid integer.");
+    else if (a < -1000000 || a > 1000000 || b < -1000000 || b > 1000000)
+        ui->SortedArray->setText("Generation Error: Min and max numbers allows to be only from -1000000 to 1000000.");
+    else if (a > b)
         ui->SortedArray->setText("Generation Error: Min numbers must be smaller than max numbers.");
-        return false;
-    }
-    return true;
+    else
+        return true;
+    return false;
 }
 
 void Window::QuickSortButton_clicked() {
@@ -106,16 +96,16 @@ void Window::sort_and_display(const function<SortArray(SortArray)>& sortFunction
 
     if (validate_input(inputList)) {
         std::vector<int> array;
-        for(const QString& number : inputList)
+        for (const QString& number : inputList)
             array.push_back(number.toInt());
 
         SortArray sortArray(array.data(), array.size());
         SortArray sortedArray = sortFunction(sortArray);
 
         QString output;
-        for(int i = 0; i < sortedArray.get_size(); i++) {
+        for (int i = 0; i < sortedArray.get_size(); i++) {
             output.append(QString::number(sortedArray[i]));
-            if(i != sortedArray.get_size() - 1)
+            if (i != sortedArray.get_size() - 1)
                 output.append(", ");
         }
         ui->SortedArray->setText(output);
@@ -128,17 +118,18 @@ void Window::sort_and_display(const function<SortArray(SortArray)>& sortFunction
                              "Used Memory: " + QString::number(metrics.used_memory) + "\n" +
                              "Time: " + QString::fromStdString(to_string(metrics.sort_time)) + " seconds\n");
     }
+    else {
+        ui->SortedArray->setText("Input Error: Please enter valid integers separated by commas.");
+        ui->Metrics->clear();
+    }
 }
 
 bool Window::validate_input(QStringList& inputList) {
     for (QString& str : inputList) {
         bool is_int;
         str.toInt(&is_int);
-        if (!is_int) {
-            ui->SortedArray->setText("Input Error: Please enter valid integers separated by commas.");
-            ui->Metrics->clear();
+        if (!is_int)
             return false;
-        }
     }
     return true;
 }
@@ -146,13 +137,12 @@ bool Window::validate_input(QStringList& inputList) {
 void Window::SaveMetricsButton_clicked() {
     string file_path = ui->SavedPath->text().toStdString();
     QString metricsMessage = ui->MetricsSavedMessage->text();
-    if (metricsMessage != "Metrics successfully saved!") {
-        QString metricsText = ui->Metrics->toPlainText();
-        if(metrics.sort_name.empty() || metricsText == "")
-            ui->MetricsSavedMessage->setText("No metrics to saved");
-        else if(save_metrics_to_csv(file_path, metrics))
-            ui->MetricsSavedMessage->setText("Metrics successfully saved!");
-        else
-            ui->MetricsSavedMessage->setText("Error opening file!");
-    }
+    QString metricsText = ui->Metrics->toPlainText();
+
+    if (metrics.sort_name.empty() || metricsText.isEmpty())
+        ui->MetricsSavedMessage->setText("No metrics to saved");
+    else if (save_metrics_to_csv(file_path, metrics))
+        ui->MetricsSavedMessage->setText("Metrics successfully saved!");
+    else
+        ui->MetricsSavedMessage->setText("Error opening file!");
 }

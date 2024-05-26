@@ -15,7 +15,7 @@ SortArray SortArray::quick_sorted() {
 }
 
 void SortArray::quick_sort_run(int low, int high) {
-    if(low < high) {
+    if (low < high) {
         int p = partition(low,high);
         quick_sort_run(low,p-1);
         quick_sort_run(p+1, high);
@@ -26,8 +26,8 @@ int SortArray::partition(int low, int high) {
     int pivot = array[high];
     int i = (low-1);
 
-    for(int j = low; j <= high; j++) {
-        if(array[j] < pivot) {
+    for (int j = low; j <= high; j++) {
+        if (array[j] < pivot) {
             i++;
             swap(array[i], array[j]);
             sort_metrics.swap_count++;

@@ -14,10 +14,10 @@ SortArray SortArray::heap_sorted() {
 }
 
 void SortArray::heap_sort_run() {
-    for(int i = array_size/2-1; i >= 0; i--)
+    for (int i = array_size/2-1; i >= 0; i--)
         heapify(array_size, i);
 
-    for(int i = array_size-1; i > 0; i--) {
+    for (int i = array_size-1; i > 0; i--) {
         swap(array[0], array[i]);
         sort_metrics.swap_count++;
         sort_metrics.assignment_count += 3;
@@ -30,12 +30,12 @@ void SortArray::heapify(int heap_size, int root_index) {
     int left_child = 2*root_index+1;
     int right_child = 2*root_index+2;
 
-    if(left_child < heap_size && array[left_child] > array[largest_element])
+    if (left_child < heap_size && array[left_child] > array[largest_element])
         largest_element = left_child;
-    if(right_child < heap_size && array[right_child] > array[largest_element])
+    if (right_child < heap_size && array[right_child] > array[largest_element])
         largest_element = right_child;
 
-    if(largest_element != root_index) {
+    if (largest_element != root_index) {
         swap(array[root_index], array[largest_element]);
         sort_metrics.swap_count++;
         sort_metrics.assignment_count += 3;
