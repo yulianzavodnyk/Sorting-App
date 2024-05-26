@@ -16,26 +16,31 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class Window; }
 QT_END_NAMESPACE
 
+// Клас Window, що наслідує QMainWindow
 class Window : public QMainWindow {
-Q_OBJECT
+    Q_OBJECT
+
+// Слоти, що викликаються при натисканні відповідних кнопок
 private slots:
-    void QuickSortButton_clicked();
-    void MergeSortButton_clicked();
-    void HeapSortButton_clicked();
-    void GenerateArrayButton_clicked();
-    void SaveMetricsButton_clicked();
-    void InfoButton_clicked();
+    void InfoButton_clicked();  // Обробка натискання кнопки Info
+    void GenerateArrayButton_clicked();  // Обробка натискання кнопки Generate
+    void QuickSortButton_clicked();  // Обробка натискання кнопки QuickSort
+    void MergeSortButton_clicked();  // Обробка натискання кнопки MergeSort
+    void HeapSortButton_clicked();  // Обробка натискання кнопки HeapSort
+    void SaveMetricsButton_clicked();  // Обробка натискання кнопки Save Metrics
 
 private:
-    Ui::Window *ui;
-    Metrics metrics;
+    Ui::Window *ui;  // Вказівник на інтерфейс користувача
+    Metrics metrics;  // Зберігання метрик сортування
 
-    void sort_and_display(const function<SortArray(SortArray)>&);
-    bool validate_input(QStringList&);
-    bool validate_generate_input(QString&, QString&, QString&);
+    void sort_and_display(const function<SortArray(SortArray)>&);  // Сортування та відображення масиву
+    bool validate_input(QStringList&);  // Валідація введеного масиву
+    bool validate_input_generate_params(QString&, QString&, QString&);  // Валідація параметрів для генерації масиву
 
 public:
+    // Конструктор
     explicit Window(QWidget *parent = nullptr);
+    // Деструктор
     ~Window() override;
 };
 
