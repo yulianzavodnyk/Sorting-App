@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Window</class>
+ <widget class="QMainWindow" name="Window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>680</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sorting Algorithms</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QWidget {
+       background-color: #2E3440;
+       color: #D8DEE9;
+    }
+    QLabel {
+       font-size: 14px;
+       color: #ECEFF4;
+    }
+    QLineEdit {
+       background-color: #3B4252;
+       border: 1px solid #4C566A;
+       padding: 5px;
+       border-radius: 5px;
+       color: #ECEFF4;
+    }
+    QPushButton {
+       background-color: #5E81AC;
+       border: 1px solid #4C566A;
+       padding: 8px;
+       border-radius: 5px;
+       color: #ECEFF4;
+       font-size: 14px;
+    }
+    QPushButton:hover {
+       background-color: #81A1C1;
+    }
+    QPushButton:pressed {
+       background-color: #4C566A;
+    }
+    QPushButton#InfoButton {
+       background-color: #FF5500;
+       color: #FFFFFF;
+       padding: 5px;
+       border-radius: 5px;
+    }
+    QPushButton#InfoButton:hover {
+       background-color: #81A1C1;
+    }
+    QPushButton#InfoButton:pressed {
+       background-color: #4C566A;
+    }
+    QTextBrowser {
+       background-color: #3B4252;
+       border: 1px solid #4C566A;
+       padding: 5px;
+       border-radius: 5px;
+       color: #ECEFF4;
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="2">
+     <layout class="QHBoxLayout" name="InfoLayout">
+      <item>
+       <widget class="QPushButton" name="InfoButton">
+        <property name="text">
+         <string>Info</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QVBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="GenerateLabel">
+          <property name="text">
+           <string>To generate array input </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="SelectSize">
+          <property name="text">
+           <string>size:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="InputSize"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="SelectFirstNum">
+          <property name="text">
+           <string>min number:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="InputFirstNum"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="SelectSecondNum">
+          <property name="text">
+           <string>max number:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="InputSecondNum"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="GenerateArrayButton">
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Generate</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="InputLabel">
+        <property name="text">
+         <string>Or manually input list of elements you want to sort</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="InputArray"/>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="SortingAlgorithmLabel">
+        <property name="text">
+         <string>Choose sorting algorithm</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="Buttons">
+        <item>
+         <widget class="QPushButton" name="QuickSortButton">
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>QuickSort</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="MergeSortButton">
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>MergeSort</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="HeapSortButton">
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>HeapSort</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="OutputLabel">
+        <property name="text">
+         <string>Output</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="SortedArray"/>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="MetricsBox">
+        <item>
+         <layout class="QVBoxLayout" name="SaveMetricsButtonLabel">
+          <item>
+           <widget class="QLabel" name="MetricLabel">
+            <property name="text">
+             <string>Sorted array metrics</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="Metrics"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="SaveMetricsButtonLabel">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="MetricsSavedLabel">
+            <property name="text">
+             <string>Enter saving path</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="SavedPath">
+            <property name="text">
+             <string>../src/evaluation/sorting_metrics.csv</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="SaveMetricsButton">
+            <property name="font">
+             <font>
+              <pointsize>-1</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Save metrics (CSV format)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="MetricsSavedMessage"/>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
