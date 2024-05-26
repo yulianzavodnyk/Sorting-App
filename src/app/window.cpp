@@ -21,13 +21,13 @@ void Window::InfoButton_clicked() {
     QMessageBox::information(this, "Info",
          "This application allows you to sort arrays using QuickSort, MergeSort, or HeapSort. "
          "Also you can generate random arrays and view sorting metrics.\n\n"
-         "1. If you want to generate array randomly, input size of it and the minimum and maximum possible number you want to be in array\n"
-         "(Size = [0, 100000]; Min = [-10000000, 10000000]; Max = [-10000000, 10000000])\n"
-         "2. You can also manually print array. Format: Integers integers separated by commas.\n"
+         "1. If you want to generate array randomly, input size of it and the minimum and maximum possible number you want to be in array. "
+         "Size = [1, 100000]; Min = [-10000000, 10000000]; Max = [-10000000, 10000000].\n"
+         "2. You can also manually print array. Format: integers separated by commas.\n"
          "3. Choose sorting algorithm: QuickSort, MergeSort, or HeapSort.\n"
-         "4. After you press on of sorting buttons you will see sorted array and sorting metrics\n"
-         "5. Then after array sorted, you can download metrics in csv format. To do it, you need to input file path\n"
-         "(there is already default path '../src/evaluation/sorting_metrics.csv', but you can change it)"
+         "4. After you press one of sorting buttons you will see sorted array and sorting metrics.\n"
+         "5. Then after array sorted, you can download metrics in csv format. To do it, you need to input file path. "
+         "There is already default path '../src/evaluation/sorting_metrics.csv', but you can change it."
     );
 }
 
@@ -135,7 +135,7 @@ bool Window::validate_input(QStringList& inputList) {
         bool is_int;
         str.toInt(&is_int);
         if (!is_int) {
-            ui->SortedArray->setText("Error: Please enter valid integers separated by commas.");
+            ui->SortedArray->setText("Input Error: Please enter valid integers separated by commas.");
             ui->Metrics->clear();
             return false;
         }
