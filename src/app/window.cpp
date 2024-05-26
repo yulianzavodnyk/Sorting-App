@@ -143,7 +143,6 @@ bool Window::validate_input(QStringList& inputList) {
     return true;
 }
 
-
 void Window::SaveMetricsButton_clicked() {
     string file_path = ui->SavedPath->text().toStdString();
     QString metricsMessage = ui->MetricsSavedMessage->text();
