@@ -26,7 +26,9 @@ It allows user to sort integers, see sorted data and sorting metrics.
 - Example of generation random array, sorting and saving metrics.
 ![](docs/gallery/sorting_example.gif)
 
-## Prerequisites
+# Getting Started
+
+## Requirements
 
 - **Docker**: Follow the instructions on the [Docker website](https://www.docker.com/get-started) to install Docker.
 - **VcXsrv** (X Server for Windows): Download and install VcXsrv from [SourceForge](https://sourceforge.net/projects/vcxsrv/).
