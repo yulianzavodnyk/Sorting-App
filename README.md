@@ -3,7 +3,7 @@
 1. [Overview](#overview)
 2. [Features](#features)
 3. [Gallery](#gallery)
-4. [Prerequisites](#prerequisites)
+4. [Requirements](#requirements)
 5. [Setup and Running](#setup-and-running)
 6. [Notes](#notes)
 7. [License](#license)
