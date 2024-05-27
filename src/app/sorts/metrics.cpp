@@ -1,6 +1,6 @@
 #include "sorts.h"
 
-// Виведення метрик сортування в консоль
+// Print sorting metrics to the console
 void SortArray::print_metrics() {
     cout << "\n===================================" << endl;
     cout << left << setw(12) << "Sort Name:" << sort_metrics.sort_name << endl;
@@ -12,26 +12,26 @@ void SortArray::print_metrics() {
     cout << "===================================\n";
 }
 
-// Перевірки чи файл є порожнім
+// Check if a file is empty
 bool is_file_empty(string& file_path) {
-    ifstream file(file_path, ios::ate); // Відкриття файлу в режимі додавання
-    return file.tellg() == 0; // Перевірка чи розмір файлу дорівнює нулю
+    ifstream file(file_path, ios::ate);     // Open file in append mode
+    return file.tellg() == 0;                        // Check if the file size is zero
 }
 
-// Збереження метрик у файл CSV
+// Save metrics to a CSV file
 bool save_metrics_to_csv(string& file_path, Metrics metrics) {
-    ofstream file(file_path, ios::app); // Відкриття файлу в режимі додавання
+    ofstream file(file_path, ios::app);     // Open file in append mode
 
     if (!file.is_open()) {
-        cerr << "Error opening file " << endl;
+        cerr << "Error opening file" << endl;
         return false;
     }
 
-    // Запис заголовків у файл, якщо він порожній
+    // Write headers to the file if it is empty
     if (is_file_empty(file_path))
         file << "Algorithm,Array Size,Swaps,Used Memory,Time\n";
 
-    // Запис метрик у файл
+    // Write metrics to the file
     file << metrics.sort_name + "," +
             to_string(metrics.array_size) + "," +
             to_string(metrics.swap_count) + "," +
@@ -40,7 +40,6 @@ bool save_metrics_to_csv(string& file_path, Metrics metrics) {
 
     cout << "Metrics successfully saved!\n";
 
-    // Закриття файлу
-    file.close();
+    file.close();   // Close the file
     return true;
 }

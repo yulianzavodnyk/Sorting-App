@@ -1,40 +1,41 @@
 #include "sorts.h"
 
-// Cортування методом MergeSort та повернення відсортованого масиву
+// Sort the array using MergeSort and return the sorted array
 SortArray SortArray::merge_sorted() {
-    SortArray result(*this); // Створення копії поточного масиву
-    result.sort_metrics = {array_size, "MergeSort", 0, (sizeof(int)*array_size), 0};
+    SortArray result(*this);    // Create a copy of the current array
+    result.sort_metrics = {array_size, "MergeSort", 0, (sizeof(int) * array_size), 0};
 
-    // Вимірювання та обчислення часу сортування
+    // Measure and calculate the sorting time
     auto start_time = chrono::high_resolution_clock::now();
-    result.merge_sort_run(0, array_size-1); // Виконання сортування
+    result.merge_sort_run(0, array_size - 1);       // Run array sorting
     auto end_time = chrono::high_resolution_clock::now();
     result.sort_metrics.sort_time = chrono::duration<double>(end_time - start_time).count();
 
     result.status = "Sorted";
-    return result; // Повернення відсортованого масиву
+    return result;      // Return the sorted array
 }
 
-// Функція для сортування методом MergeSort
+// Function to perform MergeSort
 void SortArray::merge_sort_run(int left, int right) {
     if (left < right) {
-        int mid = left + (right - left) / 2; // Обчислення середини
-        merge_sort_run(left, mid); // Cортування лівої частини
-        merge_sort_run(mid + 1, right); // Cортування правої частини
-        merge(left, mid, right); // Злиття двох частин
+        int mid = left + (right - left) / 2;    // Calculate the middle
+        merge_sort_run(left, mid);          // Sort the left part
+        merge_sort_run(mid + 1, right);     // Sort the right part
+        merge(left, mid, right);                // Merge the two parts
     }
 }
 
+// Function to merge two subarrays
 void SortArray::merge(int left, int mid, int right) {
     int sub_array1 = mid - left + 1;
     int sub_array2 = right - mid;
 
-    // Створення лівого та правого підмасивів
+    // Create left and right subarrays
     int* left_array = new int[sub_array1];
     int* right_array = new int[sub_array2];
 
     copy(array + left, array + left + sub_array1, left_array);
-    std::copy(array + mid + 1, array + mid + 1 + sub_array2, right_array);
+    copy(array + mid + 1, array + mid + 1 + sub_array2, right_array);
 
     sort_metrics.used_memory += sizeof(int) * (sub_array1 + sub_array2);
 

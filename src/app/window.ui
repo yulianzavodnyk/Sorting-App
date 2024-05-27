@@ -300,7 +300,7 @@
           <item>
            <widget class="QLineEdit" name="SavedPath">
             <property name="text">
-             <string>../src/evaluation/sorting_metrics.csv</string>
+             <string>src/evaluation/sorting_metrics.csv</string>
             </property>
            </widget>
           </item>

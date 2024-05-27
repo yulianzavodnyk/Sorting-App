@@ -2,10 +2,8 @@
 .vscode
 
 cmake-build-debug
-src/evaluation
 
 *.exe
 *.ilk
 *.obj
 *.pdb
-*.csv

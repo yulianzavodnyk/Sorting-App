@@ -1,13 +1,9 @@
 #include <QApplication>
-#include "app/window.h" // Заголовковий файл розробленого застосунку
+#include "app/window.h"     // Header file of the developed application
 
 int main(int argc, char *argv[]) {
-    // Об'єкт QApplication, який керує потоком виконання програми
-    QApplication app(argc, argv);
-    // Створення вікна програми
-    Window window;
-    // Відображення вікна програми
-    window.show();
-    // Запуск обробки подій програми
-    return app.exec();
+    QApplication app(argc, argv);    // QApplication object, which manages the application's execution flow
+    Window window;                      // Creating the application object
+    window.show();                      // Displaying the application window
+    return app.exec();                  // Starting the event processing loop of the application
 }

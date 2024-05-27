@@ -1,0 +1,10 @@
+[owner]
+name = "Yulian Zavodnyk"
+email="yulianzavodnyk@gmail.com"
+
+[project]
+name = "First_Year_CS_Coursework"
+version = "0.0.1"
+description = "Application for array sorting using fast sorting algorithms"
+readme = "README.md"
+license = {file = "LICENSE"}

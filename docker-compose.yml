@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    image: first_year_cs_coursework
+    container_name: first_year_cs_coursework
+    environment:
+      - DISPLAY=host.docker.internal:0.0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    stdin_open: true
+    tty: true

@@ -1,6 +1,6 @@
 #include "sorts.h"
 
-// Конструктор
+// Constructor
 SortArray::SortArray(int* arr, int size) {
     array_size = size;
     array = new int[array_size];
@@ -9,10 +9,10 @@ SortArray::SortArray(int* arr, int size) {
     status = "Unsorted";
 }
 
-// Деструктор
+// Destructor
 SortArray::~SortArray() { delete[] array; }
 
-// Копіювальний конструктор
+// Copy constructor
 SortArray::SortArray(const SortArray& other) {
     array_size = other.array_size;
     array = new int[array_size];
@@ -21,9 +21,10 @@ SortArray::SortArray(const SortArray& other) {
     status = other.status;
 }
 
-// Оператор присвоєння
+// Assignment operator
 SortArray& SortArray::operator=(const SortArray& other) {
-    if (this != &other) { // Перевірка на самоприсвоєння
+    // Check for self-assignment
+    if (this != &other) {
         delete[] array;
         array_size = other.array_size;
         array = new int[array_size];

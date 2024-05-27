@@ -16,32 +16,31 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class Window; }
 QT_END_NAMESPACE
 
-// Клас Window, що наслідує QMainWindow
+// Class Window inheriting from QMainWindow
 class Window : public QMainWindow {
     Q_OBJECT
 
-// Слоти, що викликаються при натисканні відповідних кнопок
+// Slots triggered by respective button clicks
 private slots:
-    void InfoButton_clicked();  // Обробка натискання кнопки Info
-    void GenerateArrayButton_clicked();  // Обробка натискання кнопки Generate
-    void QuickSortButton_clicked();  // Обробка натискання кнопки QuickSort
-    void MergeSortButton_clicked();  // Обробка натискання кнопки MergeSort
-    void HeapSortButton_clicked();  // Обробка натискання кнопки HeapSort
-    void SaveMetricsButton_clicked();  // Обробка натискання кнопки Save Metrics
+    void InfoButton_clicked();                // Handler for Info button click
+    void GenerateArrayButton_clicked();       // Handler for Generate button click
+    void QuickSortButton_clicked();           // Handler for QuickSort button click
+    void MergeSortButton_clicked();           // Handler for MergeSort button click
+    void HeapSortButton_clicked();            // Handler for HeapSort button click
+    void SaveMetricsButton_clicked();         // Handler for Save Metrics button click
 
 private:
-    Ui::Window *ui;  // Вказівник на інтерфейс користувача
-    Metrics metrics;  // Зберігання метрик сортування
+    Ui::Window *ui;                           // Pointer to the user interface
+    Metrics metrics;                          // Storage for sorting metrics
 
-    void sort_and_display(const function<SortArray(SortArray)>&);  // Сортування та відображення масиву
-    bool validate_input(QStringList&);  // Валідація введеного масиву
-    bool validate_input_generate_params(QString&, QString&, QString&);  // Валідація параметрів для генерації масиву
+    // Helper functions
+    void sort_and_display(const function<SortArray(SortArray)>&);       // Sort and display the array
+    bool validate_input(QStringList&);                                  // Validate the input array
+    bool validate_input_generate_params(QString&, QString&, QString&);  // Validate parameters for generating the array
 
 public:
-    // Конструктор
-    explicit Window(QWidget *parent = nullptr);
-    // Деструктор
-    ~Window() override;
+    explicit Window(QWidget *parent = nullptr);     // Constructor
+    ~Window() override;                             // Destructor
 };
 
 #endif

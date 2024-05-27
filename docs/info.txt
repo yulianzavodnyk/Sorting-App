@@ -1,0 +1,8 @@
+This application allows you to sort arrays using QuickSort, MergeSort, or HeapSort.
+You can also generate random arrays and view sorting metrics.
+1. To generate an array randomly, input its size and the minimum and maximum possible values.
+Size = [1, 100000]; Min = [-1000000, 1000000]; Max = [-1000000, 1000000].
+2. You can also manually input an array. Format: integers separated by commas.
+3. Choose a sorting algorithm: QuickSort, MergeSort, or HeapSort.
+4. After pressing one of the sorting buttons, you will see the sorted array and sorting metrics.
+5. Once the array is sorted, you can download the metrics in CSV format. To do this, you need to input a file path.
