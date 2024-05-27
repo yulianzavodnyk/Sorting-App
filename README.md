@@ -21,10 +21,13 @@ It allows user to sort integers, see sorted data and sorting metrics.
 - **Save Metrics**: Ability to save sorting metrics to a CSV format.
 
 ## Gallery
-- Click info button to see details how application works.
-![](docs/gallery/info.gif) 
-- Example of generation random array, sorting and saving metrics.
-![](docs/gallery/sorting_example.gif)
+Click info button to see details how application works.
+
+<img src="docs/gallery/info.gif" width="300" height="300"/>
+
+Example of generation random array, sorting and saving metrics:
+
+<img src="docs/gallery/sorting_example.gif" width="300" height="300"/>
 
 # Getting Started
 
