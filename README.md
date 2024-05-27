@@ -53,20 +53,14 @@ Set DISPLAY Environment Variable:
 $env:DISPLAY="host.docker.internal:0.0"
 ```
 
-### Step 4: Docker to Connect to X Server
-Run the following command to allow Docker connect to the X server:
-```sh
-xhost +local:docker
-```
+### Step 4: Run Docker Engine
 
-### Step 5: Run Docker Engine
-
-### Step 6: Build the Docker Image
+### Step 5: Build the Docker Image
 ```sh
 docker build -t first_year_cs_coursework .
 ```
 
-### Step 7: Run the Docker Container
+### Step 6: Run the Docker Container
 ```sh
 docker run -it --rm -e DISPLAY=host.docker.internal:0.0 -v /tmp/.X11-unix:/tmp/.X11-unix first_year_cs_coursework
 ```
