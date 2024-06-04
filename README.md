@@ -5,23 +5,23 @@
 3. [Gallery](#gallery)
 4. [Requirements](#requirements)
 5. [Setup and Running](#setup-and-running)
-6. [Notes](#notes)
+6. [Important Notes](#important-notes)
 7. [License](#license)
 
 ## Overview
-This is my final project for the end of first Computer Science academic year. 
+This is the project that I did during my first Computer Science academic year.
 The goal was to implement fast sorting algorithms such as QuickSort, MergeSort and HeapSort.
-For that reason I've built an application using Qt for the GUI and can it be run inside Docker container. 
-It allows user to sort integers, see sorted data and sorting metrics.
+For that reason, I've built an application using Qt for the GUI that can be run inside a Docker container.
+It allows users to sort integers, see sorted data and sorting metrics.
 
 ## Features
-- **Sorting Algorithms**: Supports QuickSort, MergeSort, and HeapSort.
-- **Array Input**: Users can manually input arrays or generate random arrays with specified size and range.
-- **Metrics**: Displays detailed metrics including array size, number of swaps, memory usage, and sorting time.
-- **Save Metrics**: Ability to save sorting metrics to a CSV format.
+- **Sorting algorithms**: Supports QuickSort, MergeSort, and HeapSort.
+- **Array input**: Users can manually input arrays or generate random arrays with specified size and range.
+- **See metrics**: Displays detailed metrics including array size, number of swaps, memory usage, and sorting time.
+- **Save metrics**: Ability to save sorting metrics to a CSV format.
 
 ## Gallery
-Click info button to see details how application works.
+Click 'Info' button to see details how application works.
 
 <img src="docs/gallery/info.gif" width="300" height="300"/>
 
@@ -74,9 +74,10 @@ or if you prefer using Docker Compose you can run
 docker-compose up --build
 ```
 
-## Notes
+## Important Notes
 - Ensure VcXsrv is running before starting the Docker container.
 - The DISPLAY environment variable and Docker volume for X11 are necessary for GUI display.
+- Remember that when you are saving metrics, it will be saved inside docker container.
 
 ## License
 This project is licensed under MIT License. Check LICENSE for details.
