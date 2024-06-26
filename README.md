@@ -1,4 +1,4 @@
-# First Year CS Coursework - Fast Sorting Algorithms
+# First Year CS Project - Sorting App (Fast Sorting Algorithms)
 
 1. [Overview](#overview)
 2. [Features](#features)
