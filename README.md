@@ -40,8 +40,8 @@ Example of generation random array, sorting and saving metrics:
 
 ### Step 1: Clone the Repository
 ```sh
-git clone https://github.com/yulianzavodnyk/First-Year-CS-Coursework.git
-cd First-Year-CS-Coursework
+git clone https://github.com/yulianzavodnyk/Sorting-App.git
+cd Sorting-App
 ```
 
 ### Step 2: Run VcXsrv:
