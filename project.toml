@@ -3,7 +3,7 @@ name = "Yulian Zavodnyk"
 email="yulianzavodnyk@gmail.com"
 
 [project]
-name = "First_Year_CS_Coursework"
+name = "Sorting_App"
 version = "0.0.1"
 description = "Application for array sorting using fast sorting algorithms"
 readme = "README.md"
